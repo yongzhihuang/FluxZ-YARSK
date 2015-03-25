@@ -16,7 +16,14 @@ var SampleIndex = React.createClass({
         return (
                 <div className="col-lg-12 col-xs-12 col-md-12">
                     <h2>FluxZ-YARSK</h2>
-                    <p>This is a simple (non isomorphic) starter kit using React, Flux(vanilla) and React Router.  The project's build system uses Gulp, Webpack, Babel, and Less.</p>
+                    <p>This is a simple (non isomorphic) starter kit using React, Flux(vanilla) and React Router.  The project's build system uses Gulp, Webpack, Babel, and Bootstrat & Less.</p>
+                    <p>This project aims to create a simple REACT + Flux starter kit to quickly jump start your app.  It includes sample components to demonstrate how to manage components. </p>
+                    <div className="well well-sm">Repo: <a href="https://github.com/yongzhihuang/FluxZ-YARSK" target="_blank">https://github.com/yongzhihuang/FluxZ-YARSK</a></div>
+                    <div className="well well-sm">Author: Yongzhi Huang (<a href="https://twitter.com/whyzhi" target="_blank">@whyzhi</a>)</div>
+                    <hr />
+
+                    <h2>Directory Structure</h2>
+                    <p>Todo...</p>
                     <hr />
 
                     <h2>React</h2>
@@ -43,6 +50,11 @@ var SampleIndex = React.createClass({
 
                     <h2>React Router</h2>
                     <p>This starter kit uses React Router to do its routing.  React Router was inspired by Ember Router and has grown to be an unofficial React Router for the community, check it out: <a href="https://github.com/rackt/react-router" target="_blank">https://github.com/rackt/react-router</a></p>
+                    <hr />
+
+
+                    <h2>CSS</h2>
+                    <p>This boilerplate uses LESS, and closely follow Medium guideline for how to properly do maintainable stylesheets: <a href="https://gist.github.com/fat/a47b882eb5f84293c4ed" target="_blank">https://gist.github.com/fat/a47b882eb5f84293c4ed</a></p>
                     <hr />
 
                     <h2>Contact</h2>
