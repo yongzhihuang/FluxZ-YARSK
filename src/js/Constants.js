@@ -5,13 +5,13 @@ module.exports = {
     API: 'http://YOURAPIENDPOINT',
 
     ActionTypes: keyMirror({
-        CONTACTS_LOADED: null,
-        LOAD_CONTACTS: null,
-        DELETE_CONTACT: null,
-
         ADD_TO_CART: null,
         REMOVE_FROM_CART: null,
         CLEAR_CART: null,
+
+        AUTH_SIGNIN: null,
+        AUTH_SIGNIN_SUCCESS: null,
+        AUTH_SIGNIN_FAILED: null
     }),
 
     PayloadSources: keyMirror({

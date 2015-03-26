@@ -39,14 +39,14 @@ var AppStore = _.extend(EventEmitter.prototype, {
     },
 
     getCart:function() {
-        console.log('AppStore: Items in _cartItems', _cartItems);
+        //console.log('AppStore: Items in _cartItems', _cartItems);
         return _cartItems;
     },
 
     dispatcherIndex:AppDispatcher.register(function(payload){
         // this is our action from handleViewAction
         var action = payload.action;
-
+        console.log('AppStore: Payload received', payload);
         switch(action.type){
             case ActionTypes.ADD_TO_CART:
                 _addToCart(payload.action.item);

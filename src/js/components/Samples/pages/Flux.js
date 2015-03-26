@@ -1,5 +1,6 @@
 import React from 'react';
 import Catalog from '../Catalog';
+import SampleAuth from '../SampleAuth';
 
 export default class Flux extends React.Component {
 	render() {
@@ -28,7 +29,8 @@ export default class Flux extends React.Component {
 				<hr />
 
 				<h2>Flux Auth Pattern</h2>
-				<p>To be writtern </p>
+				<p>This is a sample Auth process using Flux pattern.</p>
+				<SampleAuth />
 
 			</div>
 		);	

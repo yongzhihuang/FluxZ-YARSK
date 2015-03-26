@@ -1,8 +1,8 @@
 var React = require('react/addons');
-
 var Router = require('react-router');
 var RouteHandler = Router.RouteHandler;
 
+var AppConfig = require('../config/AppConfig');
 var TopNav = require('./Navs/TopNav');
 
 var AppOptions = {
@@ -12,7 +12,7 @@ var AppOptions = {
         'Flux',
         'Resources'
     ],
-    siteName: 'FluxZ-YARSK'
+    siteName: AppConfig.SITE_NAME
 };
 
 var AppRoot = React.createClass({
