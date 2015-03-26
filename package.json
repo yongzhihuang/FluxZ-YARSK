@@ -19,7 +19,8 @@
     "react": "^0.13.0",
     "react-router": "^0.13.2",
     "underscore": "^1.8.2",
-    "react-notification": "~1.1.0"
+    "react-notification": "~1.1.0",
+    "superagent": "~1.1.0"
   },
   "devDependencies": {
     "babel-core": "^4.7.4",
