@@ -37,6 +37,9 @@ var AppStore = _.extend(EventEmitter.prototype, {
           case ActionTypes.ADD_TO_CART:
             _addToCart(payload.action.item);
             break;
+          case ActionTypes.REMOVE_FROM_CART:
+            _removeFromCart(payload.action.item);
+            break;
         }
 
         AppStore.emitChange();

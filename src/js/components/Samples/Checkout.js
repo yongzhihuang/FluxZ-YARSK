@@ -1,8 +1,9 @@
 var React = require('react/addons');
 var AppStore = require('../../stores/AppStore');
+var AppActions = require('../../actions/AppActions');
 
 function cartItems() {
-    return {items: AppStore.getCart()}
+    return {items: AppStore.getCart()};
 }
 
 var Checkout = React.createClass({
@@ -18,10 +19,21 @@ var Checkout = React.createClass({
         this.setState(cartItems());
     },
 
+    onRemoveItem: function() {
+        var item = this.props.items[index];
+
+        //Pass to flux action handler
+        AppActions.removeFromCart(item);
+
+        this.setState({
+          selectedItems: this.state.selectedItems.concat(item)
+        });
+    },
+
     render: function() {
         var listItems = this.props.items.map(function(item, i) {
-            return <li className="list-group-item" key={"selectedItem" + i}>{item.title}</li>
-        });
+            return <li className="list-group-item" key={"selectedItem" + i}>{item.title} <div className="btn btn-default" onClick={this.onRemoveItem.bind(null, i)}>-</div></li>
+        }.bind(this));
 
         var count = listItems.length;
 

@@ -10,7 +10,7 @@ var Catalog = React.createClass({
         var item = this.props.items[index];
 
         //Pass to flux action handler
-        AppActions.sampleAction(item);
+        AppActions.addToCart(item);
 
         this.setState({
           selectedItems: this.state.selectedItems.concat(item)
@@ -35,16 +35,15 @@ var Catalog = React.createClass({
         }.bind(this));
 
         return (
-            <div>
-                <h2>Flux Component</h2>
-                <p>This is a sample shopping cart example inplemented in basic Flux pattern. Check out console as you click [+] sign to see what the data looks like when sending through the dispatcher and to the store.  Read more about flux here: <a href="https://facebook.github.io/flux/docs/overview.html#content">https://facebook.github.io/flux/docs/overview.html#content</a></p>
-
+            <div className="col-lg-12 col-xs-12 col-md-12">
                 <div className="col-lg-6 col-xs-12 col-md-6">
                     <h3>Item Catalog</h3>
                     <ul className="list-group">{listItems}</ul>
                 </div>
 
+                <div className="col-lg-6 col-xs-12 col-md-6">
                     <Checkout items={this.state.selectedItems} />
+                </div> 
             </div>
         );
     }

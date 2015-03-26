@@ -2,7 +2,12 @@
   "name": "FluxZ-YARSK",
   "version": "0.0.1",
   "description": "This is a simple (non isomorphic) starter kit using React, Flux(vanilla) and React Router. The project's build system uses Gulp, Webpack, Babel, and Less.",
-  "main": "gulpfile.js",
+  "license": "MIT",
+  "repository": "http://yongzhihuang.com/fluxzyarsk",
+  "engines": {
+    "node": ">= 0.10",
+    "npm": ">= 2.1"
+  },
   "dependencies": {
     "envify": "^1.2.1",
     "es6-promise": "^1.0.0",
@@ -48,6 +53,5 @@
       "<rootDir>/node_modules/react"
     ]
   },
-  "author": "Yongzhi Huang",
-  "license": "MIT"
+  "author": "Yongzhi Huang"
 }

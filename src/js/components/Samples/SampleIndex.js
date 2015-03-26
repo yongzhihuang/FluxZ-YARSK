@@ -16,7 +16,7 @@ var SampleIndex = React.createClass({
         return (
                 <div className="col-lg-12 col-xs-12 col-md-12">
                     <h2>FluxZ-YARSK</h2>
-                    <p>This is a simple (non isomorphic) starter kit using React, Flux(vanilla) and React Router.  The project's build system uses Gulp, Webpack, Babel, and Bootstrat & Less.</p>
+                    <p>This is a simple (non isomorphic) starter kit using React, Flux(vanilla) and React Router.  The project's build system uses Gulp, Webpack, Babel, Bootstrap & Less.</p>
                     <p>This project aims to create a simple REACT + Flux starter kit to quickly jump start your app.  It includes sample components to demonstrate how to manage components. </p>
                     <div className="well well-sm">Repo: <a href="https://github.com/yongzhihuang/FluxZ-YARSK" target="_blank">https://github.com/yongzhihuang/FluxZ-YARSK</a></div>
                     <div className="well well-sm">Author: Yongzhi Huang (<a href="https://twitter.com/whyzhi" target="_blank">@whyzhi</a>)</div>
