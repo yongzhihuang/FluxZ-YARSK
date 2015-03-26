@@ -27,6 +27,10 @@ var Checkout = React.createClass({
 
     },
 
+    clearCart: function() {
+        AppActions.clearCart();
+    },
+
     render: function() {
         var listItems = this.state.items.map(function(item, i) {
             return (
@@ -41,10 +45,11 @@ var Checkout = React.createClass({
         return (
              <div className="col-lg-6 col-xs-12 col-md-6">
                 <h3>Shopping Bag</h3>
+                <div><b>Total Items:</b> <span>{count}</span></div>
                 <ul className="list-group">
                     {listItems}
                 </ul>
-                Total Items: <span>{count}</span>
+                <div className="btn btn-default" onClick={this.clearCart}>Clear</div>
             </div>
         );
     }

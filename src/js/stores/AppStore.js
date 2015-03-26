@@ -21,6 +21,10 @@ function _removeFromCart(item) {
     }
 }
 
+function _clearCart() {
+    _cartItems = [];
+}
+
 var AppStore = _.extend(EventEmitter.prototype, {
     emitChange:function(){
         this.emit(CHANGE_EVENT);
@@ -51,6 +55,10 @@ var AppStore = _.extend(EventEmitter.prototype, {
             case ActionTypes.REMOVE_FROM_CART:
                 _removeFromCart(payload.action.item);
             break;
+
+            case ActionTypes.CLEAR_CART:
+                _clearCart();
+            break;
         }
 
         AppStore.emitChange();
@@ -61,3 +69,4 @@ var AppStore = _.extend(EventEmitter.prototype, {
 });
 
 module.exports = AppStore;
+    

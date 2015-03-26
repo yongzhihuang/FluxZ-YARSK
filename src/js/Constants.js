@@ -10,7 +10,8 @@ module.exports = {
         DELETE_CONTACT: null,
 
         ADD_TO_CART: null,
-        REMOVE_FROM_CART: null
+        REMOVE_FROM_CART: null,
+        CLEAR_CART: null,
     }),
 
     PayloadSources: keyMirror({

@@ -13,6 +13,11 @@ var AppActions = {
 			type: ActionTypes.REMOVE_FROM_CART,
 			item: item
 		});
+	},
+	clearCart: function() {
+		AppDispatcher.handleViewAction({
+			type: ActionTypes.CLEAR_CART
+		});
 	}
 };
 
