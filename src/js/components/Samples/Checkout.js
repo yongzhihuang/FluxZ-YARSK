@@ -19,20 +19,21 @@ var Checkout = React.createClass({
         this.setState(cartItems());
     },
 
-    onRemoveItem: function() {
-        var item = this.props.items[index];
+    onRemoveItem: function(index) {
+        var item = this.state.items[index];
 
         //Pass to flux action handler
         AppActions.removeFromCart(item);
 
-        this.setState({
-          selectedItems: this.state.selectedItems.concat(item)
-        });
     },
 
     render: function() {
-        var listItems = this.props.items.map(function(item, i) {
-            return <li className="list-group-item" key={"selectedItem" + i}>{item.title} <div className="btn btn-default" onClick={this.onRemoveItem.bind(null, i)}>-</div></li>
+        var listItems = this.state.items.map(function(item, i) {
+            return (
+                    <li className="list-group-item" key={"selectedItem" + i}>
+                        {item} <div className="listItemAction listItemAction--remove pull-right" onClick={this.onRemoveItem.bind(null, i)}>-</div>
+                    </li>
+             )
         }.bind(this));
 
         var count = listItems.length;

@@ -8,9 +8,17 @@ var CHANGE_EVENT = "change";
 var _cartItems = [];
 
 function _addToCart(item) {
-    console.log('Adding item', item.title);
+    console.log('AppStore: Adding item', item.title);
     _cartItems.push(item.title);
-    console.log('Current items in cart', _cartItems);
+}
+
+function _removeFromCart(item) {
+    console.log('AppStore: Removing from cart', item);
+    var itemIndex = _.indexOf(_cartItems, item);
+    //Check if item we're deleting actually exist in cartItems
+    if (itemIndex !== -1) {
+        _cartItems = _.without(_cartItems, item);
+    }
 }
 
 var AppStore = _.extend(EventEmitter.prototype, {
@@ -27,18 +35,21 @@ var AppStore = _.extend(EventEmitter.prototype, {
     },
 
     getCart:function() {
+        console.log('AppStore: Items in _cartItems', _cartItems);
         return _cartItems;
     },
 
     dispatcherIndex:AppDispatcher.register(function(payload){
-        // console.log('payload', payload);
-        var action = payload.action; // this is our action from handleViewAction
-        switch(action.actionType){
-          case ActionTypes.ADD_TO_CART:
-            _addToCart(payload.action.item);
+        // this is our action from handleViewAction
+        var action = payload.action;
+
+        switch(action.type){
+            case ActionTypes.ADD_TO_CART:
+                _addToCart(payload.action.item);
             break;
-          case ActionTypes.REMOVE_FROM_CART:
-            _removeFromCart(payload.action.item);
+
+            case ActionTypes.REMOVE_FROM_CART:
+                _removeFromCart(payload.action.item);
             break;
         }
 

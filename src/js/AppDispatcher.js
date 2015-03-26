@@ -4,7 +4,7 @@ var assign = require('react/lib/Object.assign');
 
 var AppDispatcher = assign(new Dispatcher(), {
     handleServerAction: function(action) {
-        console.log('server action', action);
+        console.log('Server action received:', action);
         var payload = {
             source: PayloadSources.SERVER_ACTION,
             action: action
@@ -13,7 +13,7 @@ var AppDispatcher = assign(new Dispatcher(), {
     },
 
     handleViewAction:function (action) {
-        console.log('view action', action);
+        console.log('View action received', action);
         var payload = {
             source: PayloadSources.VIEW_ACTION,
             action: action
