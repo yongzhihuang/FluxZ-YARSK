@@ -24,14 +24,14 @@ var SampleREST = React.createClass({
 	},
 
 	componentWillMount() {
-		RESTStore.listen(this.onChange);
+		RESTStore.listen(this._onChange);
 	},
 
 	componentWillUnmount() {
-		RESTStore.unlisten(this.onChange);
+		RESTStore.unlisten(this._onChange);
 	},
 
-	onChange() {
+	_onChange() {
 		console.log('data change detected, states: ', RESTStore.getState());
 		this.setState(RESTStore.getState());
 	},

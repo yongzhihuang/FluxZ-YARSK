@@ -1,6 +1,6 @@
 import React from 'react/addons';
 import Checkout from './Checkout';
-import AppActions from '../../../../actions/AppActions';
+import CartActions from '../../../../actions/CartActions';
 
 var Catalog = React.createClass({
 
@@ -21,7 +21,8 @@ var Catalog = React.createClass({
         let item = this.props.items[index];
 
         //Pass to flux action handler
-        AppActions.addToCart(item);
+        console.log('Triggers addToCart action');
+        CartActions.addToCart(item);
 
         this.setState({
           selectedItems: this.state.selectedItems.concat(item)

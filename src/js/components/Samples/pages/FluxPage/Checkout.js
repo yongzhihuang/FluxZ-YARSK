@@ -1,33 +1,35 @@
 import React from 'react/addons';
-import AppStore from '../../../../stores/AppStore';
-import AppActions from '../../../../actions/AppActions';
-
-function cartItems() {
-    return {items: AppStore.getCart()};
-}
+import CartStore from '../../../../stores/CartStore';
+import CartActions from '../../../../actions/CartActions';
 
 var Checkout = React.createClass({
     getInitialState() {
-        return cartItems();
+        return CartStore.getState();
     },
 
     componentWillMount() {
-        AppStore.addChangeListener(this._onChange);
+        CartStore.listen(this._onChange);
+    },
+
+    componentWillUnmount() {
+        CartStore.unlisten(this._onChange);
     },
 
     _onChange() {
-        this.setState(cartItems());
+        console.log('Detected item store change, state is: ', CartStore.getState());
+        this.setState(CartStore.getState());
     },
 
     onRemoveItem(index) {
         let item = this.state.items[index];
 
         //Pass to flux action handler
-        AppActions.removeFromCart(item);
+        console.log('Triggers removeFromCart action');
+        CartActions.removeFromCart(item);
     },
 
     clearCart() {
-        AppActions.clearCart();
+        CartActions.clearCart();
     },
 
     render() {
