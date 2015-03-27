@@ -1,7 +1,7 @@
-var AppDispatcher = require('../AppDispatcher');
-var ActionTypes = require('../Constants').ActionTypes;
-var _ = require('lodash');
-var EventEmitter = require('events').EventEmitter;
+import AppDispatcher from '../AppDispatcher';
+import { ActionTypes } from '../Constants';
+import _ from 'lodash';
+import { EventEmitter } from 'events';
 
 var CHANGE_EVENT = "change";
 
@@ -14,7 +14,7 @@ function _addToCart(item) {
 
 function _removeFromCart(item) {
     console.log('AppStore: Removing from cart', item);
-    var itemIndex = _.indexOf(_cartItems, item);
+    let itemIndex = _.indexOf(_cartItems, item);
     //Check if item we're deleting actually exist in cartItems
     if (itemIndex !== -1) {
         _cartItems = _.without(_cartItems, item);
@@ -26,26 +26,26 @@ function _clearCart() {
 }
 
 var AppStore = _.extend(EventEmitter.prototype, {
-    emitChange:function(){
+    emitChange(){
         this.emit(CHANGE_EVENT);
     },
 
-    addChangeListener:function(callback){
+    addChangeListener(callback){
         this.on(CHANGE_EVENT, callback);
     },
 
-    removeChangeListener:function(callback){
+    removeChangeListener(callback){
         this.removeListener(CHANGE_EVENT, callback);
     },
 
-    getCart:function() {
+    getCart() {
         //console.log('AppStore: Items in _cartItems', _cartItems);
         return _cartItems;
     },
 
-    dispatcherIndex:AppDispatcher.register(function(payload){
+    dispatcherIndex:AppDispatcher.register((payload) => {
         // this is our action from handleViewAction
-        var action = payload.action;
+        let action = payload.action;
         console.log('AppStore: Payload received', payload);
         switch(action.type){
             case ActionTypes.ADD_TO_CART:

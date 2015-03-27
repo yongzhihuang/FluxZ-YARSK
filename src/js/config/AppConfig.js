@@ -1,4 +1,3 @@
-
 module.exports = {
     SITE_NAME: 'FluxZ-YARSK',
     DOMAIN: 'http://yongzhihuang.com/fluxzyarsk',

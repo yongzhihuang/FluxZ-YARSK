@@ -1,10 +1,10 @@
-var React = require('react/addons');
-var Router = require('react-router');
-var Link = Router.Link;
+import React from 'react/addons';
+import Router from 'react-router';
+import { Link } from 'react-router';
 
 var LeftNav = React.createClass({
 
-    render: function () {
+    render() {
         return (
 	<div className="col-sm-3 col-md-2 sidebar tw-sidebar">
 		<ul className="nav nav-sidebar">

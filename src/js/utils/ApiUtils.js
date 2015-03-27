@@ -1,17 +1,17 @@
-var xhr = require('../libs/xhr');
-var API = require('../Constants').API;
-var ActionTypes = require('../Constants').ActionTypes;
-var ServerActions = require('../actions/ServerActions');
+import xhr from '../libs/xhr';
+import { API } from '../Constants';
+import { ActionTypes } from '../Constants';
+import ServerActions from '../actions/ServerActions';
 
 var ApiUtils = {
-    loadContacts: function() {
-        xhr.getJSON(API + '/contacts', function(err, res) {
+    loadContacts() {
+        xhr.getJSON(API + '/contacts', (err, res) => {
             ServerActions.loadedContacts(res.contacts);
         });
     },
 
-    deleteContact: function(id) {
-        xhr.deleteJSON(API + '/contacts/' + id, function() {
+    deleteContact(id) {
+        xhr.deleteJSON(API + '/contacts/' + id, () => {
             ServerActions.deleteContact(id);
         });
     }

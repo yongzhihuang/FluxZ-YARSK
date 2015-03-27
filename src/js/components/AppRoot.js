@@ -1,9 +1,9 @@
-var React = require('react/addons');
-var Router = require('react-router');
-var RouteHandler = Router.RouteHandler;
+import React from 'react/addons';
+import Router from 'react-router';
+import { RouteHandler } from 'react-router';
 
-var AppConfig = require('../config/AppConfig');
-var TopNav = require('./Navs/TopNav');
+import AppConfig from '../config/AppConfig'
+import TopNav from './Navs/TopNav'
 
 var AppOptions = {
     menuItems: [
@@ -17,7 +17,7 @@ var AppOptions = {
 
 var AppRoot = React.createClass({
 
-    render: function () {
+    render() {
       return (
         <div className="col-lg-12 col-xs-12 col-md-12">
             <TopNav AppOptions={AppOptions} />

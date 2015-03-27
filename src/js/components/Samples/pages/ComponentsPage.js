@@ -3,7 +3,7 @@ import SampleES6 from '../SampleES6';
 import GriddleSample from '../GriddleSample';
 import SampleNotification from '../SampleNotification';
 
-export default class Components extends React.Component {
+var ComponentsPage = React.createClass({
 	render() {
 		return (
 			<div className="col-lg-12 col-xs-12 col-md-12">
@@ -18,4 +18,6 @@ export default class Components extends React.Component {
 			</div>
 		);	
 	}
-}
+});
+
+module.exports = ComponentsPage;

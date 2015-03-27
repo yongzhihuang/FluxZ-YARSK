@@ -1,23 +1,22 @@
-var AppDispatcher = require('../AppDispatcher');
-var ActionTypes = require('../Constants').ActionTypes;
-var AuthActions = require('../actions/AuthActions');
+import AppDispatcher from '../AppDispatcher';
+import { ActionTypes } from '../Constants';
+import AuthActions from '../actions/AuthActions';
+import { EventEmitter } from 'events';
 
-var APIConfig = require('../config/APIConfig');
+import APIConfig from '../config/APIConfig';
 
-var _ = require('lodash');
-var superagent = require('superagent');
-var EventEmitter = require('events').EventEmitter;
+import _ from 'lodash';
+import superagent from 'superagent';
 
 var SIGNIN_SUCCESS_EVENT = 'signinSuccess';
 var SIGNIN_FAILURE_EVENT = 'signinFailure';
-
 
 function _signin(data) {
     superagent
         .post(APIConfig.API_BASE + '/signin')
         .send(data)
         .set('Accept', 'application/json')
-        .end(function(res) {
+        .end((res) => {
             //Fake API response
             if (data.username === 'test' && data.password === 'test') {
                 AuthActions.signinSuccess({});
@@ -38,34 +37,34 @@ function _signin(data) {
 }
 
 var AuthStore = _.extend(EventEmitter.prototype, {
-    emitSigninSuccess: function(){
+    emitSigninSuccess(){
         this.emit(SIGNIN_SUCCESS_EVENT);
     },
 
-    addSigninSuccessListener: function(callback){
+    addSigninSuccessListener(callback){
         this.on(SIGNIN_SUCCESS_EVENT, callback);
     },
 
-    removeSigninSuccessListener: function(callback){
+    removeSigninSuccessListener(callback){
         this.removeListener(SIGNIN_SUCCESS_EVENT, callback);
     },
 
-    emitSigninFailure: function(){
+    emitSigninFailure(){
         this.emit(SIGNIN_FAILURE_EVENT);
     },
 
-    addSigninFailureListener: function(callback){
+    addSigninFailureListener(callback){
         this.on(SIGNIN_FAILURE_EVENT, callback);
     },
 
-    removeSigninFailureListener: function(callback){
+    removeSigninFailureListener(callback){
         this.removeListener(SIGNIN_FAILURE_EVENT, callback);
     },
 
 
-    dispatcherIndex:AppDispatcher.register(function(payload){
+    dispatcherIndex:AppDispatcher.register((payload) => {
         // this is our action from handleViewAction
-        var action = payload.action;
+        let action = payload.action;
         console.log('AuthStore: Payload received', payload);
         switch(action.type){
             case ActionTypes.AUTH_SIGNIN:

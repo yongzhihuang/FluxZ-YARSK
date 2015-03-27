@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default class Resources extends React.Component {
+var ResourcesPage = React.createClass({
 	render() {
 		return (
 			<div className="col-lg-12 col-xs-12 col-md-12">
@@ -9,4 +9,6 @@ export default class Resources extends React.Component {
 			</div>
 		);	
 	}
-}
+})
+
+module.exports = ResourcesPage;

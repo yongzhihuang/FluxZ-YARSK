@@ -1,46 +1,45 @@
-var React = require('react/addons');
-var AppStore = require('../../stores/AppStore');
-var AppActions = require('../../actions/AppActions');
+import React from 'react/addons';
+import AppStore from '../../stores/AppStore';
+import AppActions from '../../actions/AppActions';
 
 function cartItems() {
     return {items: AppStore.getCart()};
 }
 
 var Checkout = React.createClass({
-    getInitialState: function() {
+    getInitialState() {
         return cartItems();
     },
 
-    componentWillMount: function() {
+    componentWillMount() {
         AppStore.addChangeListener(this._onChange);
     },
 
-    _onChange: function() {
+    _onChange() {
         this.setState(cartItems());
     },
 
-    onRemoveItem: function(index) {
-        var item = this.state.items[index];
+    onRemoveItem(index) {
+        let item = this.state.items[index];
 
         //Pass to flux action handler
         AppActions.removeFromCart(item);
-
     },
 
-    clearCart: function() {
+    clearCart() {
         AppActions.clearCart();
     },
 
-    render: function() {
-        var listItems = this.state.items.map(function(item, i) {
+    render() {
+        let listItems = this.state.items.map((item, index) => {
             return (
-                    <li className="list-group-item" key={"selectedItem" + i}>
-                        {item} <div className="listItemAction listItemAction--remove pull-right" onClick={this.onRemoveItem.bind(null, i)}>-</div>
+                    <li className="list-group-item" key={"selectedItem" + index}>
+                        {item} <div className="listItemAction listItemAction--remove pull-right" onClick={this.onRemoveItem.bind(this, index)}>-</div>
                     </li>
              )
-        }.bind(this));
+        });
 
-        var count = listItems.length;
+        let count = listItems.length;
 
         return (
              <div className="col-lg-6 col-xs-12 col-md-6">

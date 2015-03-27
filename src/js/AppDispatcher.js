@@ -1,20 +1,20 @@
-var Dispatcher = require('flux').Dispatcher;
-var PayloadSources = require('./Constants').PayloadSources;
-var assign = require('react/lib/Object.assign');
+import { Dispatcher } from 'flux';
+import { PayloadSources } from './Constants';
+import assign from 'react/lib/Object.assign';
 
 var AppDispatcher = assign(new Dispatcher(), {
-    handleServerAction: function(action) {
+    handleServerAction(action) {
         console.log('Server action received:', action);
-        var payload = {
+        let payload = {
             source: PayloadSources.SERVER_ACTION,
             action: action
         };
         this.dispatch(payload);
     },
 
-    handleViewAction:function (action) {
+    handleViewAction(action) {
         console.log('View action received', action);
-        var payload = {
+        let payload = {
             source: PayloadSources.VIEW_ACTION,
             action: action
         };

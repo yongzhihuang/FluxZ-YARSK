@@ -2,7 +2,7 @@ import React from 'react';
 import Catalog from '../Catalog';
 import SampleAuth from '../SampleAuth';
 
-export default class Flux extends React.Component {
+var FluxPage = React.createClass({
 	render() {
 		return (
 			<div className="col-lg-12 col-xs-12 col-md-12">
@@ -35,4 +35,6 @@ export default class Flux extends React.Component {
 			</div>
 		);	
 	}
-}
+});
+
+module.exports = FluxPage;

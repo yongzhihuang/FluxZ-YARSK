@@ -1,4 +1,4 @@
-import React from 'react';
+import React from 'react/addons';
 import assign from 'react/lib/Object.assign';
 
 //Borrowed from https://github.com/gdi2290/FrontendMasters-2015-02-13-React/blob/master/excercises/3-events-and-state/app.js
@@ -54,7 +54,7 @@ var SampleES6 = React.createClass({
 		});
 	},
 
-	renderPanel () {
+	renderPanel() {
 		var country = this.props.countries[this.state.active];
 
 		return (

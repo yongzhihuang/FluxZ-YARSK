@@ -1,25 +1,24 @@
-var React = require('react/addons'), 
-    Checkout = require('./Checkout');
-
-var AppActions = require('../../actions/AppActions');
+import React from 'react/addons';
+import Checkout from './Checkout';
+import AppActions from '../../actions/AppActions';
 
 var Catalog = React.createClass({
 
-    getInitialState: function() {
+    getInitialState() {
         return {
             selectedItems: [] 
         };
     },
 
-    getDefaultProps: function() {
+    getDefaultProps() {
         return {
             items: [{ title: 'Bread' }, { title: 'Milk' }, { title: 'Cheese' }]  
         };
     },
 
-    onAddItem: function(index) {
+    onAddItem(index) {
 
-        var item = this.props.items[index];
+        let item = this.props.items[index];
 
         //Pass to flux action handler
         AppActions.addToCart(item);
@@ -29,14 +28,16 @@ var Catalog = React.createClass({
         });
     },
 
-    render: function() {
-        var listItems = this.props.items.map(function(item, i) {
+    render() {
+        let listItems = this.props.items.map((item, index) => {
             return (
-                <li className="list-group-item" key={"item" + i}>
-                    {item.title} <div className="listItemAction listItemAction--add pull-right" onClick={this.onAddItem.bind(null, i)}>+</div>
+                <li className="list-group-item" key={"item" + index}>
+                    {item.title} 
+                    <div className="listItemAction listItemAction--add pull-right" 
+                        onClick={this.onAddItem.bind(this, index)}>+</div>
                 </li>
              )
-        }.bind(this));
+        });
 
         return (
             <div className="col-lg-12 col-xs-12 col-md-12">

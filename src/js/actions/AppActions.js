@@ -1,20 +1,22 @@
-var AppDispatcher = require('../AppDispatcher');
-var ActionTypes = require('../Constants').ActionTypes;
+import AppDispatcher from '../AppDispatcher';
+import { ActionTypes } from '../Constants';
 
 var AppActions = {
-	addToCart: function (item) {
+	addToCart(item) {
 		AppDispatcher.handleViewAction({
 			type: ActionTypes.ADD_TO_CART,
 			item: item
 		});
 	},
-	removeFromCart: function(item) {
+
+	removeFromCart(item) {
 		AppDispatcher.handleViewAction({
 			type: ActionTypes.REMOVE_FROM_CART,
 			item: item
 		});
 	},
-	clearCart: function() {
+
+	clearCart() {
 		AppDispatcher.handleViewAction({
 			type: ActionTypes.CLEAR_CART
 		});

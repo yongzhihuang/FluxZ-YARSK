@@ -1,6 +1,5 @@
-import React from 'react';
+import React from 'react/addons';
 import Notification from 'react-notification';
-
 
 var SampleNotification = React.createClass({
 

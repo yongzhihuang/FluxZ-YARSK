@@ -6,13 +6,13 @@ import GriddleSample from './GriddleSample';
 
 var SampleIndex = React.createClass({
 
-    getDefaultProps: function() {
+    getDefaultProps() {
         return {
             foo: 'bar'
         }
     },
     
-    render: function () {
+    render() {
         return (
                 <div className="col-lg-12 col-xs-12 col-md-12">
                     <h2>FluxZ-YARSK</h2>

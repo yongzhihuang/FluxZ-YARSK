@@ -1,4 +1,4 @@
-import React from 'react';
+import React from 'react/addons';
 import Griddle from 'griddle-react';
 
 var fakeData =  [
@@ -49,7 +49,7 @@ var fakeData =  [
   }
 ];
 
-export default class GriddleSample extends React.Component {
+var GriddleSample = React.createClass({
 	render() {
 		return (
 			<div>
@@ -60,4 +60,6 @@ export default class GriddleSample extends React.Component {
 			</div>
 		);	
 	}
-}
+});
+
+module.exports = GriddleSample;

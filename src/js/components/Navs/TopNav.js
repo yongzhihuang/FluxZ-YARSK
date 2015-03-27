@@ -1,15 +1,15 @@
-var React = require('react');
-var Router = require('react-router');
-var Link = Router.Link;
+import React from 'react/addons';
+import Router from 'react-router';
+import { Link } from 'react-router';
 
 var TopNav = React.createClass({
 	propTypes: {
 		menuItems: React.PropTypes.array
 	},
 
-	render: function () {
+	render() {
 
-		var Menu = this.props.AppOptions.menuItems.map(function(menuItem) {
+		var Menu = this.props.AppOptions.menuItems.map((menuItem) => {
 			var menuUrl = '/' + menuItem.toLowerCase().replace(/\s/ig, '');
 			return <li><Link to={menuUrl}>{menuItem}</Link></li>
 		});

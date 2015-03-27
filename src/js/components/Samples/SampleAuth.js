@@ -1,43 +1,43 @@
-var React = require('react/addons');
-var AuthStore = require('../../stores/AuthStore');
-var AuthActions = require('../../actions/AuthActions');
+import React from 'react/addons';
+import AuthStore from '../../stores/AuthStore';
+import AuthActions from '../../actions/AuthActions';
 
 var SampleAuth = React.createClass({
     
-    getInitialState: function() {
+    getInitialState() {
         return {
             statusMessage: null
         };
     },
 
-    componentDidMount: function() {
+    componentDidMount() {
         AuthStore.addSigninSuccessListener(this._onSigninSuccess);
         AuthStore.addSigninFailureListener(this._onSigninFailure);
     },
 
-    componentWillUnmount: function() {
+    componentWillUnmount() {
         AuthStore.removeSigninSuccessListener(this._onSigninSuccess);
         AuthStore.removeSigninFailureListener(this._onSigninFailure);
     },
 
-    _onSigninSuccess: function() {
+    _onSigninSuccess() {
         //React router go to an auth page
         this.setState({
             statusMessage: 'Sign in success! Redirecting you'
         });
     },
 
-    _onSigninFailure: function() {
+    _onSigninFailure() {
         //React router go to an auth page
         this.setState({
             statusMessage: 'Sign in Failed, please try again'
         });
     },
 
-    handleSubmit: function(e) {
+    handleSubmit(e) {
         e.preventDefault();
-        var username = this.refs.username.getDOMNode().value.trim();
-        var password = this.refs.password.getDOMNode().value.trim();
+        let username = this.refs.username.getDOMNode().value.trim();
+        let password = this.refs.password.getDOMNode().value.trim();
 
         AuthActions.signin({
             'username': username,
@@ -46,7 +46,7 @@ var SampleAuth = React.createClass({
     },
 
 
-    render: function() {
+    render() {
        
         return (
             <div className="col-lg-6 col-xs-12 col-md-6">
