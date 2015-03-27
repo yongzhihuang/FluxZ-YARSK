@@ -12,13 +12,15 @@ var FluxPage = React.createClass({
 				<h2>Flux flow Tl;dr</h2>
 				<div>
 					<ol>
-						<li>Component triggers an event, calls <b>AppActions.myEventNameHere(myPayloadVariable);</b>
+						<li>A user triggers an action on a view.</li>
+
+						<li>The view passes this action to an App Action listener/handler (actions/AppAction.js).
 						</li>
-						<li><b>AppAction</b> has function to handle <b>myEventNameHere(myPayloadVariable)</b>, in it calls <b>AppDispatcher.handleViewAction</b> and passing in the action type(Which is one of the predefined AppConstants) and the payload <b>myPayloadVariable</b>
+
+						<li>App Action calls the dispatcher with information about Action Type along with any necessary data.
 						</li>
-						<li><b>AppDispatcher</b> has defined a function <b>handleViewAction</b> that takes an action, and calls <b>this.dispatch</b> and passing the action along
-						</li>
-						<li>In <b>AppStore</b>, dispatcher registers the payload, and performs switch-case on the <b>AppConstant (event type)</b> and calls the necessary function as needed to perform the action.  Emitting an event as needed to tell the app what's going on
+
+						<li>App store checks the message dispatched to it, performs actions needed with that data, then emits an event to any view listening to the event.  The view is finally updated.
 						</li>
 					</ol>
 				</div>

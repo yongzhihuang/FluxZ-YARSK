@@ -2,7 +2,7 @@ FluxZ-YARSK
 ================
 ![FluxZ-YARSK](http://i.imgur.com/BnsU1Hs.png)
 
-A simple (non isomorphic) starter kit using React, Flux(vanilla) and React Router. The project's build system uses Gulp, Webpack, Babel, and Less. 
+A simple (non isomorphic) starter kit using React, Flux(vanilla) and React Router. The project's build system uses Gulp, Webpack, Babel for ES6. 
 
 This is being actively updated, feedbacks welcome: @whyzhi on Twitter
 
@@ -41,10 +41,10 @@ Read more about flux here: https://facebook.github.io/flux/docs/overview.html#co
 
 Here's a tldr; of a sample Flux flow:
 
-1. Component triggers an event, calls `AppActions.myEventNameHere(myPayloadVariable`);
+1. A user triggers an action on a view.
 
-2. `AppAction` has function to handle `myEventNameHere(myPayloadVariable)`, in it calls `AppDispatcher.handleViewAction` and passing in the action type(Which is one of the predefined AppConstants) and the payload `myPayloadVariable`
+2. The view passes this action to an App Action listener/handler (actions/AppAction.js).
 
-3. `AppDispatcher` has defined a function `handleViewAction` that takes an action, and calls `this.dispatch` and passing the action along
+3. App Action calls the dispatcher with information about Action Type along with any necessary data.
 
-4. In `AppStore`, dispatcher registers the payload, and performs switch-case on the `AppConstant (event type)` and calls the necessary function as needed to perform the action.  Emitting an event as needed to tell the app what's going on
+4. App store checks the message dispatched to it, performs actions needed with that data, then emits an event to any view listening to the event.  The view is finally updated.
