@@ -11,13 +11,13 @@ import FluxPage from './components/Samples/pages/FluxPage/FluxPage';
 import ResourcesPage from './components/Samples/pages/ResourcesPage/ResourcesPage';
 
 module.exports = (
-	<Route name="app" path="/" handler={AppRoot}>
-		<DefaultRoute handler={require('./components/Overview')} />
-		<Route name="Overview" path="overview" handler={Overview} />
-		<Route name="Components" path="components" handler={ComponentsPage} />
-		<Route name="Flux" path="flux" handler={FluxPage} />
-		<Route name="Resources" path="resources" handler={ResourcesPage} />
-		<NotFoundRoute handler={NotFound}/>
-	</Route>
+    <Route name="app" path="/" handler={AppRoot}>
+        <DefaultRoute handler={require('./components/Overview')} />
+        <Route name="Overview" path="overview" handler={Overview} />
+        <Route name="Components" path="components" handler={ComponentsPage} />
+        <Route name="Flux" path="flux" handler={FluxPage} />
+        <Route name="Resources" path="resources" handler={ResourcesPage} />
+        <NotFoundRoute handler={NotFound}/>
+    </Route>
 );
 

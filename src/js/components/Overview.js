@@ -8,12 +8,12 @@ var Overview = React.createClass({
             foo: 'bar'
         }
     },
-    
+
     render() {
         return (
-                <div className="col-lg-12 col-xs-12 col-md-12">
-                    <SampleIndex />
-                </div>
+            <div className="col-lg-12 col-xs-12 col-md-12">
+                <SampleIndex />
+            </div>
         );
     }
 

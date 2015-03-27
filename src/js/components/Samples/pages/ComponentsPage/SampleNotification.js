@@ -50,9 +50,9 @@ var SampleNotification = React.createClass({
                     <div className="btn btn-danger"onClick={this.handleHide}>Hide</div>
                 </div>
 
-                <Notification ref="notification" 
-                                    message={this.state.message} 
-                                    action={this.state.action} 
+                <Notification ref="notification"
+                                    message={this.state.message}
+                                    action={this.state.action}
                                     styles={this.getNotificationStyles()}
                                     onClick={this.handleNotificationActionClick}/>
             </div>

@@ -4,20 +4,20 @@ import GriddleSample from './GriddleSample';
 import SampleNotification from './SampleNotification';
 
 var ComponentsPage = React.createClass({
-	render() {
-		return (
-			<div className="col-lg-12 col-xs-12 col-md-12">
-				<SampleES6 />
-				<hr />
+    render() {
+        return (
+            <div className="col-lg-12 col-xs-12 col-md-12">
+                <SampleES6 />
+                <hr />
 
-				<GriddleSample />
-				<hr />
+                <GriddleSample />
+                <hr />
 
-				<SampleNotification />
-				<hr />
-			</div>
-		);	
-	}
+                <SampleNotification />
+                <hr />
+            </div>
+        );
+    }
 });
 
 module.exports = ComponentsPage;

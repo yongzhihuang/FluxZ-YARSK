@@ -50,16 +50,17 @@ var fakeData =  [
 ];
 
 var GriddleSample = React.createClass({
-	render() {
-		return (
-			<div>
-				<h2>Griddle Component</h2>
-				<p>This is a neat little component called Griddle used to display data in a grid: </p>
-                        <div className="well well-sm">/components/Samples/GriddleSample.js</div>
-				<Griddle results={fakeData} tableClassName="table" showFilter={true} showSettings={true} columns={["id","name", "city", "state", "country", "company", "favoriteNumber"]} />
-			</div>
-		);	
-	}
+
+    render() {
+        return (
+            <div>
+                <h2>Griddle Component</h2>
+                <p>This is a neat little component called Griddle used to display data in a grid: </p>
+                <div className="well well-sm">/components/Samples/GriddleSample.js</div>
+                <Griddle results={fakeData} tableClassName="table" showFilter={true} showSettings={true} columns={["id","name", "city", "state", "country", "company", "favoriteNumber"]} />
+            </div>
+        );
+    }
 });
 
 module.exports = GriddleSample;
