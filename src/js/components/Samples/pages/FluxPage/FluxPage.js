@@ -1,12 +1,13 @@
 import React from 'react';
-import Catalog from '../Catalog';
-import SampleAuth from '../SampleAuth';
+import Catalog from './Catalog';
+import SampleAuth from './SampleAuth';
+import SampleREST from './SampleREST';
 
 var FluxPage = React.createClass({
 	render() {
 		return (
 			<div className="col-lg-12 col-xs-12 col-md-12">
-				<h2>Flux Component</h2>
+				<h2>Flux (Alt) Components</h2>
 				<img src="http://i.imgur.com/BbYCJLc.png" width="700" />
 
 				<h2>Flux flow Tl;dr</h2>
@@ -26,13 +27,24 @@ var FluxPage = React.createClass({
 				</div>
 				<hr />
 
-				<p>This is a sample shopping cart example inplemented in basic Flux pattern. Check out console as you click [+] sign to see what the data looks like when sending through the dispatcher and to the store.  Read more about flux here: <a href="https://facebook.github.io/flux/docs/overview.html#content">https://facebook.github.io/flux/docs/overview.html#content</a></p>
+				<h2>Examples</h2>
+				<p>Here are some examples using the flux concept. They're implemented in Alt, be sure to open up console to see logging information to better understand the flow.</p>
+				<hr />
+
+				<h3>Shopping Cart</h3>
+				<div className="well well-sm">/components/Samples/pages/FluxPage/SampleCart.js</div>
 				<Catalog />
 				<hr />
 
-				<h2>Flux Auth Pattern</h2>
-				<p>This is a sample Auth process using Flux pattern.</p>
+				<h3>Login</h3>
+				<p>Auth pattern using Flux pattern. Hint: (test:test)</p>
+				<div className="well well-sm">/components/Samples/pages/FluxPage/SampleAuth.js</div>
 				<SampleAuth />
+
+				<h3>REST</h3>
+				<p>REST demonstration that fetches repos from a Github user </p>
+				<div className="well well-sm">/components/Samples/pages/FluxPage/SampleREST.js</div>
+				<SampleREST />
 
 			</div>
 		);	

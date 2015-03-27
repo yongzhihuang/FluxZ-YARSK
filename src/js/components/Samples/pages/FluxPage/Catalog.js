@@ -1,6 +1,6 @@
 import React from 'react/addons';
 import Checkout from './Checkout';
-import AppActions from '../../actions/AppActions';
+import AppActions from '../../../../actions/AppActions';
 
 var Catalog = React.createClass({
 

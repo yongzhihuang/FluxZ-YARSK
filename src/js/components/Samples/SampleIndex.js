@@ -1,9 +1,5 @@
 var React = require('react/addons');
 
-import SampleES6 from './SampleES6';
-import Catalog from './Catalog';
-import GriddleSample from './GriddleSample';
-
 var SampleIndex = React.createClass({
 
     getDefaultProps() {

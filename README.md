@@ -2,7 +2,7 @@ FluxZ-YARSK
 ================
 ![FluxZ-YARSK](http://i.imgur.com/BnsU1Hs.png)
 
-A simple (non isomorphic) starter kit using React, Flux(vanilla) and React Router. The project's build system uses Gulp, Webpack, Babel for ES6. 
+A simple (non isomorphic) starter kit using React, Flux(alt) and React Router. The project's build system uses Gulp, Webpack, Babel for ES6. 
 
 This is being actively updated, feedbacks welcome: @whyzhi on Twitter
 

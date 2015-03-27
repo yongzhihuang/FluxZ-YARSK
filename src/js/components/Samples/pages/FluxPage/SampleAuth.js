@@ -1,6 +1,6 @@
 import React from 'react/addons';
-import AuthStore from '../../stores/AuthStore';
-import AuthActions from '../../actions/AuthActions';
+import AuthStore from '../../../../stores/AuthStore';
+import AuthActions from '../../../../actions/AuthActions';
 
 var SampleAuth = React.createClass({
     
@@ -49,11 +49,10 @@ var SampleAuth = React.createClass({
     render() {
        
         return (
-            <div className="col-lg-6 col-xs-12 col-md-6">
+            <div className="col-lg-12 col-xs-12 col-md-12">
                  <form className="form-horizontal" role="form" onSubmit={this.handleSubmit}>
                             { this.state.statusMessage ? <p className="alert alert-info">{this.state.statusMessage}</p> : null }
                              <section>
-                                <span className="label label-success">Hint: test:test</span>
                                 <div className="form-group">
                                     <label htmlFor="username" className="col-sm-4 control-label">Username:</label>
                                     <div className="col-sm-8">

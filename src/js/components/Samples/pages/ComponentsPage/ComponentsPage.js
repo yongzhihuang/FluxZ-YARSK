@@ -1,7 +1,7 @@
 import React from 'react';
-import SampleES6 from '../SampleES6';
-import GriddleSample from '../GriddleSample';
-import SampleNotification from '../SampleNotification';
+import SampleES6 from './SampleES6';
+import GriddleSample from './GriddleSample';
+import SampleNotification from './SampleNotification';
 
 var ComponentsPage = React.createClass({
 	render() {

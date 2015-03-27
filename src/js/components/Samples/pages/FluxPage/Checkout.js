@@ -1,6 +1,6 @@
 import React from 'react/addons';
-import AppStore from '../../stores/AppStore';
-import AppActions from '../../actions/AppActions';
+import AppStore from '../../../../stores/AppStore';
+import AppActions from '../../../../actions/AppActions';
 
 function cartItems() {
     return {items: AppStore.getCart()};
