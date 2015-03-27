@@ -49,7 +49,7 @@ var SampleREST = React.createClass({
 	renderResult() {
 		return this.state.repos.map((repo) => {
 			return (
-				<RepoItem repo={repo} />
+				<li><RepoItem repo={repo} /></li>
 			)
 		})
 	},
@@ -71,21 +71,18 @@ var SampleREST = React.createClass({
 	render () {
 		return (
 			<div className="col-lg-12 col-xs-12 col-md-12">
-				<div>
 					<form onSubmit={this.search}>
 						<div className="input-field">
-							<input type="text" placeholder="Github usrename"  ref="gitUsername" />
+							<input type="text" className="form-control" placeholder="Github usrename"  ref="gitUsername" />
+							<button className="btn btn-default">Search</button>
 						</div>
-						<button className="btn btn-default">Search</button>
 					</form>
 
 					{ this.renderLoading() }
 
-					<div className="row">
-						{ this.renderResult() }
+					<div className="col-lg-12 col-xs-12 col-md-12">
+						<ol className="list-group">{ this.renderResult() }</ol>
 					</div>
-				</div>
-				
 			</div>
 		);
 
