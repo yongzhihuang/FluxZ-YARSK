@@ -9,9 +9,9 @@ var TopNav = React.createClass({
 
 	render() {
 
-		var Menu = this.props.AppOptions.menuItems.map((menuItem) => {
+		var Menu = this.props.AppOptions.menuItems.map((menuItem, index) => {
 			var menuUrl = '/' + menuItem.toLowerCase().replace(/\s/ig, '');
-			return <li><Link to={menuUrl}>{menuItem}</Link></li>
+			return <li key={'topnav-' + index}><Link to={menuUrl}>{menuItem}</Link></li>
 		});
 
 		return (

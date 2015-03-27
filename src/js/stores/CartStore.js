@@ -4,7 +4,6 @@ import _ from 'lodash';
 
 class CartStore {
     constructor() {
-        this.selectedItems = [];
         this.items = [];
         this.bindAction(CartActions.addToCart, this.onAddToCart);
         this.bindAction(CartActions.removeFromCart, this.onRemoveFromCart);

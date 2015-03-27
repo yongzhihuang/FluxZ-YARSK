@@ -6,7 +6,7 @@ class RESTActions {
 		superagent.get(`https://api.github.com/users/${query}/repos`)
 		.send()
 		.end((err, response) => {
-			this.actions.searchSuccess(response.body)
+			this.actions.searchSuccess(response.body);
 		});
 
 		this.dispatch();
@@ -14,11 +14,13 @@ class RESTActions {
 
 	searchSuccess(repos) {
 		console.log('Search Success, items returned:', repos);
-		this.dispatch(repos);
-	}
-
-	repoFetched(repo) {
-		this.dispatch(repo);
+		if (repos.length) {
+			this.dispatch(repos);
+		} else {
+			//User has no public repo
+			//Handle case here
+			console.log('User has no public Repo');
+		}
 	}
 }
 

@@ -8,7 +8,7 @@ var FluxPage = React.createClass({
 		return (
 			<div className="col-lg-12 col-xs-12 col-md-12">
 				<h2>Flux (Alt) Components</h2>
-				<img src="http://i.imgur.com/BbYCJLc.png" width="700" />
+				<img src="http://i.imgur.com/82lDRHL.png" />
 
 				<h2>Flux flow Tl;dr</h2>
 				<div>

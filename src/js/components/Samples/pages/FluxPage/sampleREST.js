@@ -47,9 +47,9 @@ var SampleREST = React.createClass({
 	},
 
 	renderResult() {
-		return this.state.repos.map((repo) => {
+		return this.state.repos.map((repo, index) => {
 			return (
-				<li><RepoItem repo={repo} /></li>
+				<li key={'repo-' + index}><RepoItem repo={repo} /></li>
 			)
 		})
 	},
@@ -57,9 +57,9 @@ var SampleREST = React.createClass({
 	renderLoading() {
 		if (this.state.loading) {
 			return (
-				<div classname="progress">
-					<div classname="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">
-					<span classname="sr-only">100% Complete</span>
+				<div className="progress">
+					<div className="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">
+					<span className="sr-only">100% Complete</span>
 					</div>
 				</div>
 			)
