@@ -5,33 +5,20 @@ import AuthActions from '../../../../actions/AuthActions';
 var SampleAuth = React.createClass({
     
     getInitialState() {
-        return {
-            statusMessage: null
-        };
+        return AuthStore.getState();
     },
 
-    componentDidMount() {
-        AuthStore.addSigninSuccessListener(this._onSigninSuccess);
-        AuthStore.addSigninFailureListener(this._onSigninFailure);
+    componentWillMount() {
+        AuthStore.listen(this._onChange);
     },
 
     componentWillUnmount() {
-        AuthStore.removeSigninSuccessListener(this._onSigninSuccess);
-        AuthStore.removeSigninFailureListener(this._onSigninFailure);
+        AuthStore.unlisten(this._onChange);
     },
 
-    _onSigninSuccess() {
-        //React router go to an auth page
-        this.setState({
-            statusMessage: 'Sign in success! Redirecting you'
-        });
-    },
-
-    _onSigninFailure() {
-        //React router go to an auth page
-        this.setState({
-            statusMessage: 'Sign in Failed, please try again'
-        });
+    _onChange() {
+        console.log('data change detected, states: ', AuthStore.getState());
+        this.setState(AuthStore.getState());
     },
 
     handleSubmit(e) {
