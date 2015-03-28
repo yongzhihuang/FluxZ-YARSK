@@ -18,9 +18,10 @@ class CartStore {
     onRemoveFromCart(item) {
         console.log('Store receives request to remove item from items array', item);
         let itemIndex = _.indexOf(this.items, item);
+
         //Check if item we're deleting actually exist in cartItems
         if (itemIndex !== -1) {
-            this.items = _.without(this.items, item);
+            this.items.splice(itemIndex, 1);
         }
     }
 

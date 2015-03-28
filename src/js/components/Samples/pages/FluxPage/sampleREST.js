@@ -49,7 +49,7 @@ var SampleREST = React.createClass({
     renderResult() {
         return this.state.repos.map((repo, index) => {
             return (
-                <li key={'repo-' + index}><RepoItem repo={repo} /></li>
+                <li className="list-group-item" key={'repo-' + index}><RepoItem repo={repo} /></li>
             )
         })
     },
